@@ -1,0 +1,194 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{macros}
+\usepackage{lscape,pdflscape}
+
+\setlength\parindent{0pt}
+
+%\newcommand{\sslash}{\mathbin{/\mkern-6mu/}}
+
+\renewcommand{\op}{\operatorname}
+\newcommand{\bm}{\mathbf{m}}
+\newcommand{\clie}{C^\bu_{\rm Lie}}
+\newcommand{\cbry}{C^\bu_{\rm Bry}}
+%\DeclareMathOperator{\Sym}{Sym}
+\newcommand{\csym}{\widehat{\Sym}}
+
+%\addbibresource{refs}
+
+\usepackage{subfiles}
+
+
+\begin{document} 
+
+\title{Notes by Owen}
+
+\maketitle
+
+\section{2 November 2024}
+
+\subsection{About the derived geometry of holomorphic gauged linear sigma models (hglsm)}
+
+Let me talk about the finite-dimensional setting before talking about field theories.
+
+Let $V$ be an affine derived space, e.g., a cochain complex,
+and suppose a reductive algebraic group $G$ acts on it.
+There are three spaces whose analogs play a role in field theory:
+\begin{itemize}
+\item the stacky quotient $V/G$,
+\item the formal neighborhood of the origin in the stacky quotient, which I'll denote as $\widehat{V}/\fg$, and
+\item the affinization of $V/G$, which I'll denote by $V \sslash G$.
+\end{itemize}
+Observe that we have natural maps
+\[
+\widehat{V}/\fg \to V/G \to V\sslash G
+\]
+by definition.
+
+The latter two spaces are affine in nature, with dg algebras of functions
+\[
+\cO(\widehat{V}/\fg) = \clie(\fg, \csym(V^*))
+\]
+since $\cO(\widehat{V}) = \csym(V^*)$ and
+\[
+\cO(V\sslash G) = \cO(V)^G = \Sym(V^*)^G.
+\]
+The composite map $\widehat{V}/\fg \to V\sslash G$ corresponds to the algebra map
+\[
+\cO(V)^G \to \clie(\fg, \cO(\widehat{V})),
+\]
+which is not a quasi-isomorphism but is injective cohomologically when $V$ is an ordinary vector space.
+
+We are interested in the holomorphic gauged linear sigma model (hglsm), or gauged $\beta\gamma$ system, whose space of solutions encodes
+\[
+\Map_{\dbar}(\Sigma, T^*(V/G))
+\]
+with $\Sigma$ a Riemann surface.
+
+Let us focus on $\Sigma$ a Stein space (i.e., the analytic analog of an affine algebraic curve) 
+for simplicity, and because it is the only case relevant when we want to extract a vertex algebra.
+
+We introduce some convenient notation:
+\begin{itemize}
+\item $\fg^\Sigma$ denotes the dg Lie algebra $\Omega^{0,\bu}(\Sigma) \otimes \fg = \Map_{\dbar}(\Sigma,\fg)$,
+\item $G^\Sigma$ denotes the derived group stack $\Map_{\dbar}(\Sigma,G)$, 
+\item $(T^*V)^\Sigma$ denotes the derived stack $\Map_{\dbar}(\Sigma,T^*V)$,
+and
+\item the formal neighborhood of the origin in $T^*(V/G)$ is encoded by the graded Lie algebra
+\[
+L_0 = \fg \oplus V[-1] \oplus V^*[-2] \oplus \fg^*[-3],
+\] 
+whose degree 0 component is the Lie algebra $\fg$ and whose remaining components form an abelian subalgebra equipped with the natural action of~$\fg$.
+\end{itemize}
+We now turn to the derived spaces relevant to the hglsm.
+
+In this setting there are {\em five} spaces to consider:
+\begin{itemize}
+\item the nonperturbative classical theory encoded by~$\Map_{\dbar}(\Sigma, T^*(V/G))$,
+\item the perturbative theory expanded around the map to the origin in $T^*(V/G)$, 
+a formal moduli space 
+\[
+(\widehat{T^* V} \times \fg^*[-2])^\Sigma/\fg^\Sigma
+\] 
+encoded by the dg Lie algebra $L_0^\Sigma = \Omega^{0,\bu}(\Sigma) \otimes L_0$, 
+\item the affinization of~$\Map_{\dbar}(\Sigma, T^*(V/G))$, which I'll denote by 
+\[
+(T^*V \times \fg^*[-2])^\Sigma \sslash G^\Sigma,
+\]
+\item and $\Map_{\dbar}(\Sigma,(T^*V \times \fg^*[-2])\sslash G)$.
+\end{itemize}
+This fourth space is not what we want to work with, 
+although it is close to the usual underived thing people often study with glsms.
+
+The fifth space is an interesting hybrid whose derived geometry I don't know how to describe:
+it is the affine derived space associated to the dg algebra
+\[
+\clie(\fg^\Sigma, G; \cO(T^* V \times \fg^*[-2])),
+\]
+a relative Lie algebra cohomology complex. 
+I will denote the associated space
+\[
+\Spec(\clie(\fg^\Sigma, G; \cO(T^* V \times \fg^*[-2])))
+\]
+by
+\[
+((T^* V \times \fg^*[-2])/\fg^\Sigma)\sslash G.
+\]
+Note that this relative Lie algebra complex sits, in some sense, between the dg algebra
+\[
+\clie(\Omega^{0,\bu}(\Sigma) \otimes L_0) = \clie(\fg^\Sigma, \cO(T^*\widehat{V} \times \fg^*[-2]))
+\]
+encoding observables of the perturbative theory
+and the dg algebra
+\[
+\cbry(G^\Sigma, \cO(T^* V \times \fg^*[-2]))
+\]
+encoding observables of $(T^*V \times \fg^*[-2])^\Sigma \sslash G^\Sigma$,
+the affinization of~$\Map_{\dbar}(\Sigma, T^*(V/G))$.
+Here $\cbry$ denotes the ``differentiable cohomology for Lie groups'' introduced by Brylinski, 
+and which captures the derived invariants for a group like $G^\Sigma$.\footnote{It seems to be unpublished: see \url{https://arxiv.org/abs/math/0011069}. This paper revives and enhances work of Segal and Mitchison.}
+
+The space $\Map_{\dbar}(\Sigma,(T^*V \times \fg^*[-2])\sslash G)$ 
+
+These spaces (aside from the fourth) are related by natural maps
+\[
+\begin{tikzcd}
+(T^* V \times \fg^*[-2])^\Sigma/\fg^\Sigma \arrow[r] & \Map_{\dbar}(\Sigma, T^*(V/G)) \arrow[dd] \arrow[dr]& \\
+&&  ((T^* V \times \fg^*[-2])/\fg^\Sigma)\sslash G \arrow[dl, dashed] \\
+&(T^*V \times \fg^*[-2])^\Sigma \sslash G^\Sigma&
+\end{tikzcd}
+\]
+where there is a dashed line because I have not confirmed this map exists.
+
+The {\em best} space, from a physics perspective, is the one at the bottom,
+as it corresponds to the full algebra of observables,
+but I don't know how to compute Brylinski cohomology.
+The {\em easiest} space is the perturbative one.
+I suspect that we can get our hands on the new, intermediary space without much difficulty.
+
+\subsection{About the {\it classical} factorization and vertex algebras from hglsms}
+
+All the dg algebras described above are manifestly functorial in $\Sigma$, 
+so one obtain a prefactorization algebra on, say, $\CC$ by letting $\Sigma$ run over open sets in the complex plane.
+
+These constructions are manifestly holomorphic, 
+and they are tame,
+so one can obtain a vertex algebra from these constructions.
+They can be viewed as BRST-type reductions of the free $\beta\gamma$ system associated with~$V$.
+
+{\bf Guess:} The state space for either $(T^*V \times \fg^*[-2])^\Sigma \sslash G^\Sigma$ or $((T^* V \times \fg^*[-2])/\fg^\Sigma)\sslash G$ is the relative Lie algebra cochains
+\[
+\clie(\fg[[z]], G; \Sym(V^*[[z]] \oplus V[[z]]))
+\]
+where $\Sym(V^*[[z]] \oplus V[[z]])$ is the state space of the free $\beta\gamma$ system associated with~$V$.\footnote{If I botched that notation, just substitute the correct thing!}
+
+My guess arises from the fact that the group $G^\Sigma$ becomes $G[[z]]$ when $\Sigma$ becomes the formal disk,
+and the ``group'' cohomology for this group ought to coincide with the relative Lie algebra cohomology as there is a short exact sequence
+\[
+1 \times \fg[[z]]z \to G[[z]] \to G \to 1
+\]
+with the kernel of the evaluation map at 0 being the unipotent pro-Lie group whose Lie algebra is~$\fg[[z]]z$.
+
+\subsection{About quantization}
+
+The BV quantization of the charged $\beta\gamma$ system seems like a straightforward variant of stuff we've already done. 
+
+For the perturbative theory (expanding around the map to the origin of $T^*(V/G)$), let $c$ denote the ``ghost field'' in $\Omega^{0,\bu} \otimes \fg[1]$ and let $c^\dagger$ denote the ``antighost field'' in $\Omega^{1,\bu} \otimes \fg^*[-1]$, 
+which is a representation for the ghost fields.
+Let $\rho: \fg \to \End(V)$ denote the representation on~$V$. 
+
+{\bf Guess:} For quantizing on flat space, the anomaly is a sum 
+\[
+\Tr_V \int \rho(c) \wedge \partial \rho(c) + \Tr_{\fg^*} \int c \wedge \partial c
+\]
+up to an overall scale.
+
+(For coupling to background vector fields (i.e., for extending to arbitrary Riemann surfaces), 
+there is some anomaly I can't remember, although I know it's a kind of ``vanishing $c_1$'' thing.)
+
+{\bf Question:} Does this BV quantization work for $((T^* V \times \fg^*[-2])/\fg^\Sigma)\sslash G$? That is, on the relative Lie algebra cochains, can we use the BV Laplacian and the quantum corrections to the action?
+
+I would guess {\it yes}.
+
+
+\end{document}
