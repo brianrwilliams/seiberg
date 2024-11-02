@@ -1,0 +1,329 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{macros}
+\usepackage{lscape,pdflscape}
+
+\renewcommand{\op}{\operatorname}
+\newcommand{\bm}{\mathbf{m}}
+
+%\addbibresource{refs}
+
+\usepackage{subfiles}
+
+
+\begin{document} 
+
+\title{Notes for Owen}
+
+\maketitle
+
+
+\section{15 August 2024}
+
+\subsection{Mass terms}
+
+You mentioned mass terms, let me say some things I understand.
+
+Let's start with the holomorphic twist of $\cN=1$ theories.
+A ``mass'' term is something which makes sense for chiral multiplets.
+It is a special type of superpotential.
+The holomorphic twist of the chiral multiplet valued in a vector space $V$ is the $\beta\gamma$ system with action $\int_{\C^2} \beta \dbar \gamma$.
+Here $\gamma \in \Omega^{0,\bu}(\C^2) \otimes V$ and $\beta \in \Omega^{2,\bu}(\C^2, V^*)[1]$.
+Notice that this theory has a global symmetry by the group $GL(2) \times GL(V)$.
+A superpotential breaks this to $SL(2) \times H$ where $H \subset GL(V)$ is some subgroup.
+It is given by the data of a polynomial $W \in \cO(V) = S (V^*)$ and a holomorphic volume form on $\C^2$. To preserve translation invariance we take this volume form to be $\d z_1 \d z_2$.
+The Lagrangian associated to a superpotential, in the holomorphic twist, is
+\beqn
+\int \d z_1 \d z_2 \, W(\gamma)  .
+\eeqn
+Also notice that generically $W$ breaks the cohomological $\Z$ grading to a $\Z/2$ grading.
+
+A `mass term' is a type of superpotential prescribed by the data of symmetric matrix $M \in \Sym^2(V^*) \subset \cO(V)$.
+If $\{e_i\}$ is a basis for $V$ with corresponding chiral multiplet fields $\{\gamma_i\}$ then the associated Lagrangian is
+\beqn\label{eqn:lagmass}
+\int \d z_1 \d z_2 \, M(\gamma) = \int \d z_1 \d z_2 \, M^{ij} \gamma_i \gamma_j .
+\eeqn
+
+The simplest example is a single chiral multiplet $\gamma$ with mass term
+\beqn\label{eqn:mass1}
+\frac12 \int \d z_1 \d z_2 \, m \gamma^2 ,
+\eeqn
+where $m \in \C$.
+A `Dirac mass' makes sense for an even number of chiral multiplets.
+For two chiral multiplets $\gamma_1, \gamma_2$ it looks like 
+\beqn\label{eqn:mass2}
+\int \d z_1 \d z_2 \,  m_{D} \gamma_1 \gamma_2 ,
+\eeqn
+where again $m_D \in \C$.
+Here is an easy fact about these two simple examples.
+
+\begin{prop}
+\label{prop:mass}
+Suppose $m \ne 0$.
+Then the holomorphic twist of the theory of a free chiral multiplet with mass deformation \eqref{eqn:mass1} is perturbatively trivial.
+Suppose $m_D \ne 0$.
+The the holomorphic twist of two free chiral multiplets with mass deformation \eqref{eqn:mass2} is also perturbatively trivial. 
+\end{prop}
+
+Let's move on to the holomorphic twist of $\cN=2$ theories.
+A hypermultiplet is defined for any symplectic representation of the gauge group~$U$.
+The holomorphic twist of the hypermultiplet valued in $U$ is the $\beta\gamma$ system valued in $U$.
+This is the twisted version of the claim that in $\cN=1$ terms, a hypermultiplet consists of a chiral multiplet plus an anti-chiral multiplet.
+Hypermultiplets can have mass.
+The mass terms which arise from the holomorphic twist are always of `Dirac' type \eqref{eqn:mass2}.
+Generally, a hypermultiplet mass exists for any $M \in \op{Sp}(U)$ and takes the form \eqref{eqn:lagmass}.
+(More generally, a superpotential $W \in \cO(U)$ for hypermultiplets can be turned on if it is invariant with respect to the symplectic group).
+
+A word of \ul{\textbf{warning}}.
+When physicists speak of ``hypermultiplets valued in a representation $R$'', they almost always mean hypermultiplets valued in the symplectic representation $T^* R = R \oplus R^*$ as I defined in the previous paragraph.
+
+Let's now couple to vector multiplets.
+The holomorphic twist of the $\cN=1$ vector multiplet valued in $\lie{g}$ is BF theory to the local Lie algebra $\Omega^{0,\bu}(\C^2, \lie{g})$.
+The holomorphic twist of the $\cN=2$ vector multiplet valued in $\lie{g}$ is BF theory to the local Lie algebra $\Omega^{0,\bu}(\C^2, \lie{g})$ plus the $\beta\gamma$ system valued in the adjoint representation $\lie{g}$.
+This is the twisted version of the fact that the $\cN=2$ vector multiplet consists of a $\cN=1$ vector multiplet plus a $\cN=1$ chiral multiplet.
+
+We can couple the $\cN=2$ vector multiplet to any symplectic $\lie{g}$-representation.
+From this point of view, there is always a superpotential around.
+Let $(A,B)$ be the fields of BF theory valued in $\lie{g}$ and let $(\phi ,\psi)$ be the fields of the adjoint-valued $\beta\gamma$ system; together these fields comprise the twist of the $\cN=2$ vector multiplet.
+Let $(\beta,\gamma)$ denote the fields of the $\beta\gamma$ system valued in the symplectic representation $U$.
+Then there is a superpotential of the form
+\beqn
+W = \gamma \phi \gamma .
+\eeqn
+
+Notice that in the $\cN=2$ vector multiplet there is a $\cN=1$ chiral multiplet valued in the adjoint representation whose twisted fields we called 
+\beqn
+\phi \in \Omega^{0,\bu}(\C^2, \lie{g}) , \quad \psi \in \Omega^{2,\bu}(\C^2, \lie{g}^*)[1] .
+\eeqn
+Turning on a mass for this chiral multiplet is not allowed by $\cN=2$ supersymmetry.
+The sort of mass term one considers, at the level of the twist, is
+\beqn
+W_\mu = \mu \op{Tr}(\phi^2) 
+\eeqn
+where $\mu \in \C$.
+
+At the twisted level, there is an easy way to see why this mass terms breaks symmetry.
+The twist of $\cN=2$ supersymmetry has a residual global symmetry which assigns the gauge field $A$ weight zero and $\phi$ weight one.
+This term clearly breaks this symmetry.
+
+I'm not sure what you had in mind by starting with a $\cN=2$ theory and softly breaking to $\cN=1$ with such a mass term. Can you elaborate?
+
+\subsection{Masses in Seiberg duality}
+
+You also mentioned masses in Seiberg duality.
+To me, the obvious thing to turn on a mass term in the electric theory and follow it through the duality.
+What sort of deformation of the magnetic theory arises?
+
+Consider holomorphic QCD with gauge group $SU(N)$ and $F$ flavors.
+The (anti)quarks become $\beta\gamma$ systems whose fields we denote
+\beqn
+Q \in \Omega^{0,\bu}(\C^2) \otimes V^{\oplus F} , \quad \til Q \in \Omega^{0,\bu}(\C^2) \otimes (V^*)^{\oplus F} .
+\eeqn
+Here $V = \C^N$ is the fundamental $SU(N)$ representation.
+
+Pick a basis for $\C^F$ and write corresponding vectors in $V^{\oplus F}$ as $(v_1,\ldots,v_F)$, where $v_i \in V$ for $i=1,\ldots,F$.
+We consider the mass deformation
+\beqn
+W_{electric,m} = m Q_1 \til Q_1 .
+\eeqn
+Note we consider a Dirac type mass (this is the only one allowed).
+An elaboration of the proof of proposition \ref{prop:mass} shows the following.
+
+\begin{prop}
+Suppose $m \ne 0$.
+Holomorphic QCD with gauge group $SU(N)$ with $F$ flavors with the mass deformation $W_{electric} = m Q_1 \til Q_1$ turned on is equivalent to holomorphic QCD with gauge group $SU(N)$ with $F-1$ flavors.
+\end{prop}
+
+The magnetic theory is holomorphic QCD with gauge group $SU(F-N)$ with $F$ flavors and a meson valued in $\C^{F^2}$.
+The quarks will be denoted $q, \til q$ and the meson $M = (M_{ij})$.
+Before any masses, the superpotential is cubic
+\beqn
+W_{magnetic,0} = q M \til q .
+\eeqn
+Turning on the mass in the electric theory corresponds to deforming this superpotential by
+\beqn
+W_{magnetic,0} \rightsquigarrow W_{magnetic,m} = q M \til q + m M_{11} .
+\eeqn
+Note that there is no `mass' term in the magnetically dual theory.
+Turning on the mass in the electric theory \eqref{eqn:emass} corresponds to turning on the linear superpotential $m M_{11}$ in the magnetic theory.
+
+This linear term breaks the magnetic gauge group to $SU(F-N) \rightsquigarrow SU(F-N-1)$ and removes a flavor.
+
+\begin{prop}
+Suppose $m \ne 0$.
+Holomorphic QCD with gauge group $SU(F-N)$ with $F$ flavors with the superpotential $W_{magnetic,m} = q M \til q + m M_{11}$is equivalent to holomorphic QCD with gauge group $SU(F-N-1)$ with $F-1$ flavors.
+\end{prop}
+
+Note that this is exactly the expected dual theory!
+
+
+\subsection{Konishi anomaly}
+
+The Konishi anomaly is very simple in the holomorphic twist.
+Consider holomorphic QCD with gauge group $G$ and matter valued in $V$.
+The action is
+\beqn
+S_{hQCD} = \int B F_A + \int \beta \dbar_A \gamma .
+\eeqn
+There is a classical $\C^\times$ symmetry which weights $\gamma$ with weight $+1$ and $\beta$ with weight $-1$.
+There is a holomorphic refinement of this symmetry by the abelian local Lie
+$\Omega^{0,\bu}(\C^2)$.
+For $\alpha \in \Omega^{0,\bu}(\C^2)$ the associated local Noether current is
+\beqn
+J_\alpha = \int \beta \alpha \gamma .
+\eeqn
+
+The Konishi anomaly is a mixed $\cK$-gauge anomaly which represents the failure of the local symmetry by $\cK$ to persist at the quantum level.
+It's computed by the triangle diagram with a single $\alpha$ leg and two gauge field legs.
+It is represented by the local functional
+\beqn
+\int \alpha \op{tr}(\del A \del A) .
+\eeqn
+
+Now, suppose we have turned a superpotential on.
+No longer does $J_{\alpha}$ determine a classical symmetry.
+The ``classical anomaly'' to this is represented by the local functional
+\beqn
+\int \alpha \gamma \del W = \int \alpha \gamma^i \frac{\del W}{\del x^i} (\gamma) .
+\eeqn
+
+There is a generalization of this anomaly.
+Consider the Lie algebra $\op{Vect}(V)$ of vector fields on $V$ (maybe formal or algebraic).
+Then we can form the local Lie algebra
+\beqn
+\cK \define \Omega^{0,\bu}(\C^2) \otimes \op{Vect}(V) .
+\eeqn
+We will write sections as 
+\beqn
+\alpha \otimes X = \alpha \otimes f^i \frac{\del}{\del x^i}
+\eeqn
+(In the above terminology we were looking at the stupid abelian subalgebra of elements $\alpha \otimes Eu$ where $Eu = x^i \frac{\del}{\del x^i}$ is the Euler vector field on $V$.)
+Holomorphic QCD admits the following very natural $\cK$-background 
+\beqn
+J_{\alpha \otimes X} = \int \alpha \<\beta, X(\gamma)\> = \int \alpha \beta_i f^i(\gamma) .
+\eeqn 
+
+\begin{prop}
+The one-loop anomaly for $J$ to prescribe a quantum $\cK$-background for holomorphic QCD is represented by the local functional
+\beqn
+\int \alpha (\op{div} X)(\gamma) \op{Tr}_V(\del A \del A) = \int \alpha \frac{\del f^i}{\del x^i} (\gamma) \op{Tr}_V(\del A \del A). 
+\eeqn
+\end{prop}
+
+Geometrically, there is the following interpretation of this anomaly.
+Recall that holomorphic QCD is the cotangent theory to the derived moduli space of holomorphic maps
+\beqn
+\C^2 \to [V \slash G] .
+\eeqn
+The generalized Konishi anomaly is the anomaly for the quantization of the universal symmetry of vector fields on the target $[V\slash G]$.
+
+\subsection{Compactification on an elliptic curve}
+
+You mentioned understanding how compactficiations look over the moduli of some geometry.
+Let me take the moduli of elliptic curves.
+The compactification of any of the theories associated to the holomorphic twist of a four-dimensional $\cN=1$ theory on an elliptic curve is the holomorphic twist of a two-dimensional theory with $\cN=(2,2)$ supersymmetry.
+Naively, the compactified factorization algebra only depends on the cohomology of the elliptic curve. 
+That doesn't look so interesting over the moduli space, so I'm not sure what you had in mind.
+Can you elaborate?
+Could you give me a hint of the sort of feature(s) you are trying to see?
+
+\section{chiral rings}
+
+Let $\lie{g}$ be a simple Lie algebra and fix an invariant form on $\lie{g}$ so that we fix an isomorphism $\lie{g} = \lie{g}^*$.
+Consider the affine supermanifold
+\beqn
+V = \Pi \lie{g} \oplus \Pi \lie{g} ,
+\eeqn
+whose ring of functions is $R = \cO(V) = \wedge^\bu \left(\lie{g} \oplus \lie{g}\right)$.
+The chiral ring is functions on the sub supermanifold cut out by the equations
+\beqn
+X^2 = 0, XY + YX = 0, Y^2 = 0 \in S^2(\lie{g}) .
+\eeqn
+In other words, we have $R = \C[X,Y]_{X,Y \in \lie{g}}$ where we consider each $X,Y \in \lie{g}$ as an odd generator.
+We then consider the ideal $I$ generated by 
+
+We also consider $\lie{g}$ as a (super) manifold.
+To write a map of affine supermanifolds $\lie{g} \to V$
+is to write a map of commutative superalgebras
+\beqn
+R = \wedge^\bu (\lie{g} \oplus \lie{g}) \to S^\bu (\lie{g}) .
+\eeqn
+Since $R$ is a free superalgebra it suffices to prescribe the map on the (odd) linear generators.
+Define
+\beqn
+\{-,-\} \colon \lie{g} \oplus \lie{g} \to S^2 \lie{g} \subset S^\bu (\lie{g}) 
+\eeqn
+by $\{X,Y\} = XY + YX$.
+Thus, $\{-,-\}$ determines a map of affine supermanifolds
+\beqn
+\{-,-\} \colon \lie{g} \to V .
+\eeqn
+
+\section{$SU(2)$ QCD with three flavors}
+
+We study $SU(2)$ QCD with $F$ flavors.
+This means that the quarks live in $(\C^2)^F \oplus (\C^2)^{* F} = (\C^2)^F$ where $\C^2$ is the fundamental $SU(2)$ representation.
+We have used the fact that the fundamental and anti-fundamental representations of $SU(2)$ are isomorphic.
+We will write quark fields as $Q^1,\ldots,Q^{2F}$.
+The global symmetry group is
+\beqn
+SU(2F) \times U(1)_R .
+\eeqn
+For the $R$-symmetry to be non-anomolous one can take each quark to have $R$-charge~$R_{micro} = \frac{F-2}{F}$.
+
+The classical moduli space is the following quadric
+\beqn
+\cM_{cl} = \{v \; | \; v \wedge v = 0\} \subset \wedge^2 \C^{2F} .
+\eeqn
+Identifying $v \in \wedge^2 \C^6$ with a $6 \times 6$ skew-symmetric matrix, we have the following simplifications:
+\begin{itemize}
+\item When $F = 2$ the defining equation is simply $\op{Pf}(v) = 0$.
+\item When $F = 3$ the defining equation is $(v^{-1})_{ij} \op{Pf}(v) = 0$.
+\end{itemize}
+
+What if we add masses?
+Let $\bm = (\bm_{ij}) \in \lie{so}(2F)$ be a skew-symmetric matrix.
+We consider the mass term
+\beqn
+W = \frac12 \bm Q Q = \sum_{i < j} \bm_{ij} Q^i Q^j .
+\eeqn
+
+\subsection{$F = 3$}
+As a function of the mass matrix, the quantum moduli space $\cM(\bm)$ is expected to be deformed as
+\beqn
+v^{-1} \op{Pf}(v) = \bm ,
+\eeqn
+or in components $(v^{-1})_{ij} \op{Pf}(v) = \bm_{ij}$.
+From this, we see that in the limit $\bm \to 0$ that the quantum moduli space agrees with the classical moduli space, at least away from the singular points.
+
+\section{October 22, 2024}
+
+Consider the holomorphic twist of a free 4d $\cN=1$ chiral multiplet with $R$-charge $r$.
+This theory exists on $\C \times \PP^1$; I claim its twist is equivalent to the higher dimensional $\beta\gamma$ system on $\C \times \PP^1$ where $\gamma$ is a $(0,\bu)$-form with values in the restriction of the holomorphic line bundle $\cO(-r)$ on $\PP^1$.
+That is the fields are
+\begin{align*}
+\gamma & \in \Omega^{0,\bu}(\C \times \PP^1 , \cO(-r)) \\
+\beta & \in \Omega^{2,\bu}(\C \times \PP^1, \cO(r))[1] ,
+\end{align*}
+and the action is $\int_{\C \times \PP^1} \beta \dbar \gamma$.
+
+\begin{prop}
+The compactification of the holomorphic twist of the free chiral of $R$-charge~$r$ along $\PP^1$ is equivalent to the free $\beta\gamma-bc$ system
+with coefficients in $H^\bu(\PP^1, \cO(-r))$.
+\end{prop}
+
+In particular:
+\begin{itemize}
+\item if $r <1$ then we have $1-r$ ordinary $\beta\gamma$ systems on $\C$.
+\item if $r =1$ then this is the trivial theory.
+\item if $r > 1$ then we have $r-1$ ordinary $bc$ systems on $\C$.
+\end{itemize}
+
+More generally, one can consider the chiral multiplet on a $\PP^1$-fibration over a Riemann surface $\Sigma$.
+In this way, I think we can make sense of the partition function of the four-dimensional theory placed on `ruled surfaces of genus $g$'---I think these are nothing but $\PP^1$-fibrations over a genus $g$ Riemann surface. 
+For genus 1 such manifolds have a two-parameter moduli (roughly: the complex structure on the base elliptic curve and the parameter describing how the $\CP^1$'s are glued).
+
+One can also generalize this compactification to include a background $U(1)$ gauge field with nontrivial flux through $\PP^1$.
+In this case, the resulting compactification is the $\beta\gamma-bc$ system with coefficients in $H^\bu(\PP^1, \cO(-r-m))$ where $m = \int_{\PP^1} F$ is the flux through $\PP^1$.
+
+\end{document}
