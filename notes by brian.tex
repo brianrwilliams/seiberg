@@ -321,9 +321,28 @@ In particular:
 
 More generally, one can consider the chiral multiplet on a $\PP^1$-fibration over a Riemann surface $\Sigma$.
 In this way, I think we can make sense of the partition function of the four-dimensional theory placed on `ruled surfaces of genus $g$'---I think these are nothing but $\PP^1$-fibrations over a genus $g$ Riemann surface. 
-For genus 1 such manifolds have a two-parameter moduli (roughly: the complex structure on the base elliptic curve and the parameter describing how the $\CP^1$'s are glued).
+For genus 1 such manifolds have a two-parameter moduli (roughly: the complex structure on the base elliptic curve and the parameter describing how the $\PP^1$'s are glued).
 
 One can also generalize this compactification to include a background $U(1)$ gauge field with nontrivial flux through $\PP^1$.
 In this case, the resulting compactification is the $\beta\gamma-bc$ system with coefficients in $H^\bu(\PP^1, \cO(-r-m))$ where $m = \int_{\PP^1} F$ is the flux through $\PP^1$.
+
+\section{November 4, 2024}
+
+The $R$-symmetry bundle is taken to be the holomorphic principal $U(1)$ bundle $P_R$ on $\PP^1$ which admits a $(0,1)$ connection of curvature $1$.
+The holomorphic twist of the chiral of $R$-charge $r \in\Z$ is the free higher-dimensional $\beta\gamma$ system with
+\beqn
+\gamma \in \Omega^{0,\bu}(\C \times \PP^1, P_R \times_{U(1)_R} \C_{-r}) = \Omega^{0,\bu}(\C \times \PP^1, \cO(-r)).
+\eeqn
+Thus, the compactification along $\PP^1$ is the ordinary $\beta\gamma$ system with coefficients in $H^\bu(\PP^1, \cO(-r))$.
+
+
+What does it mean to work in a background for a flavor symmetry?
+Consider the simple example of a $U(1)_F$-symmetry on a single chiral where the background connection has flux $m$ through the $\PP^1$.
+Let $P_{m}$ denote the holomorphic principal $U(1)$ bundle on $\PP^1$ which admits a $(0,1)$ connection of flux $m$.
+If $U(1)_R \times U(1)_F$ acts on the chiral with $R$-charge $r$ and flavor weight $\rho$, then the twist is the free higher-dimensional $\beta\gamma$ system on $\C \times \PP^1$ with
+\beqn
+\gamma \in \Omega^{0,\bu}(\C \times \PP^1, P_R \times_{U(1)_R \times U(1)_F} \C_{-r,\rho}) = \Omega^{0,\bu}(\C \times \PP^1, \cO(-r+m\rho)) 
+\eeqn
+So, after compactification, this gives the ordinary $\beta\gamma$-system with coefficients in the graded vector space $H^\bu(\PP^1, \cO(-r+m\rho))$.
 
 \end{document}
