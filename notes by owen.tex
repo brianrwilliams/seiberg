@@ -295,12 +295,10 @@ where $M \in \Mat(n,n)$.
 This claim is equivalent to the {\em second fundamental theorem} of invariant theory for $\SL(n)$,
 for which I'm trying to find a convenient reference.
 
-\section{6 November 2024}
+\section{6 November 2024: More about invariant theory}
 
 Donald Trump will be our president again.
 What a ride we are choosing to take.
-
-\subsection{More about invariant theory}
 
 Alright, I found a number of references, although fewer proofs than I expected.
 So far the best is Lecture 15 of Kac's course (notes by Laksov at \url{https://people.kth.se/~laksov/notes/invariant.pdf}).
@@ -336,6 +334,34 @@ m_X(i_1,\ldots, i_n)m_Y(i_1,\ldots, i_n)
 arising from the fact that the product of determinants equals the determinant of products for square matrices.
 \end{itemize}
 \end{thm}
+
+\section{10 November: Recording some questions}
+
+It seems to me that there's a puzzle in comparing the derived geometry story with the physics story.
+For a hglsm on $d$-manifold with target arising from $V/G$, the solutions to the equations of motion form the moduli space
+\[
+\Map_{\dbar}(M, T^*[d-1](V/G))
+\]
+so that translation-invariant solutions on $M = \CC^d$ provide the familiar space
+\[
+T^*[d-1](V/G) \cong (V \oplus V^*[d-1] \oplus \fg^*[d-2])/G.
+\]
+I have called this the {\em moduli of classical vacua} at times,
+as it matches at least one definition found in the physics literature.
+
+The issue is that this space will have stuff in degree 0 that depends on the Lie algebra $\fg$, 
+namely through the ``constant anti-ghosts'' parametrized by $\fg^*[d-2]$.
+In particular, for Seiberg duality,
+it means the moduli of classical vacua is {\em not} equivalent between the electric and magnetic theories.
+
+It seems to me that there are three options for this:
+\begin{enumerate}
+\item These antighosts are ``physically irrelevant'' for some reason. (Not obvious to me, although historically they would be ignored by physicists.)
+\item Taking the classical truncation, they disappear. (This is true in some special cases but doesn't seem true generally.)
+\item Quantization kills them. 
+\end{enumerate}
+Remarkably, the third option may hold, based on Brian's recollection. 
+
 
 
 \end{document}
