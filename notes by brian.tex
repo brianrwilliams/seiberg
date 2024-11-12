@@ -367,10 +367,22 @@ Notice there are $N$ total fundamentals of $R$-charge equal to zero.
 Thus, upon compactification the $R$-charge $1$ multiplets contribute nothing and we get two-dimensional holomorphic $BF$ theory for $SU(N)$ with $N$ fundamental $\beta\gamma$ systems plus $N$ anti-fundamental $\beta\gamma$ systems.
 The underlying vertex algebra is the $SU(N)$ BRST reduction of the $\beta\gamma$ system
 \beqn\label{eqn:2dexseiberg}
-\beta\gamma(V) \otimes \beta\gamma(V^*) \cong \beta\gamma^{\otimes N} \otimes \beta\gamma^{\otimes N}
+\beta\gamma(V\otimes \C^N) \otimes \beta\gamma(V^*\otimes \C^N) \cong \beta\gamma^{\otimes N^2} \otimes \beta\gamma^{\otimes N^2}
 \eeqn
 where $V = \C^N$ is the fundamental $SU(N)$ representation.
 Notice something amazing, this theory does not involve the number $F$ at all!
+
+More invariantly, we can understand this system as follows.
+Consider the vector space
+\beqn
+V \otimes \C^N \oplus V^* \otimes \C^N = \T^*(V \oplus \C^N)
+\eeqn
+which is equipped with the (symplectic) $SU(N)$ action given by viewing $V \otimes \C^N = V \oplus \cdots \oplus V$ as $N$ copies of the fundamental representation.
+Thus, this two-dimensional theory describes the vertex algebra of chiral differential operators on the stack
+\beqn
+\T^*(V \otimes \C^N) \slash SU(N) = \C^{2 N^2} \slash SU(N) .
+\eeqn
+
 
 Now, on the dual side we have $SU(F-N)$ gauge theory with $F$ fundamental flavors and $F^2$ mesons.
 The $R$-charges of the magenetic quarks obey $r(q_a) = 1-r_a$ where $r_a$ is the $R$-charge in the electric theory.
