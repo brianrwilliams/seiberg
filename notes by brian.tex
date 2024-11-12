@@ -345,5 +345,46 @@ If $U(1)_R \times U(1)_F$ acts on the chiral with $R$-charge $r$ and flavor weig
 \eeqn
 So, after compactification, this gives the ordinary $\beta\gamma$-system with coefficients in the graded vector space $H^\bu(\PP^1, \cO(-r+m\rho))$.
 
+
+
+\section{November 12, 2024}
+
+This is a short note about the simplest 2d sphere reduction of twisted Seiberg duality.
+
+One starts with holomorphic QCD with $SU(N)$ gauge group with $F$ fundamental flavors and $F > N$.
+We take the $R$-charges of the quarks and anti-quarks to be $R(Q_a)=1$ for $a = 1,\ldots, F-N$ and $R(Q_a) = 0$ for $a = F-N+1,\ldots,F$.
+In the holomorphic setting, this means that
+\beqn
+\gamma_a \in \Omega^{0,\bu}(\C \times \PP^1, \cO(-1)) \otimes \C^N
+\eeqn
+for $a = 1,\ldots, F-N$ and 
+\beqn
+\gamma_a \in \Omega^{0,\bu}(\C \times \PP^1) \otimes \C^N
+\eeqn
+for $a=F-N+1,\ldots, F$. 
+
+Notice there are $N$ total fundamentals of $R$-charge equal to zero. 
+Thus, upon compactification the $R$-charge $1$ multiplets contribute nothing and we get two-dimensional holomorphic $BF$ theory for $SU(N)$ with $N$ fundamental $\beta\gamma$ systems plus $N$ anti-fundamental $\beta\gamma$ systems.
+The underlying vertex algebra is the $SU(N)$ BRST reduction of the $\beta\gamma$ system
+\beqn\label{eqn:2dexseiberg}
+\beta\gamma(V) \otimes \beta\gamma(V^*) \cong \beta\gamma^{\otimes N} \otimes \beta\gamma^{\otimes N}
+\eeqn
+where $V = \C^N$ is the fundamental $SU(N)$ representation.
+Notice something amazing, this theory does not involve the number $F$ at all!
+
+Now, on the dual side we have $SU(F-N)$ gauge theory with $F$ fundamental flavors and $F^2$ mesons.
+The $R$-charges of the magenetic quarks obey $r(q_a) = 1-r_a$ where $r_a$ is the $R$-charge in the electric theory.
+Thus, upon compactification of the dual theory we find holomorphic $BF$ theory for $SU(F-N)$ with $F-N$ fundamental $\beta\gamma$ systems, $F-N$ anti-fundamental $\beta\gamma$ systems, $N^2$ $\beta\gamma$ systems (mesons), and $(F-N)^2$ $bc$ systems (mesons).
+
+What happens when we take $F = N+1$.
+The electric side does not change, its the $SU(N)$ BRST reduction of \eqref{eqn:2dexseiberg}.
+The magnetic side now has trivial gauge group.
+It looks like
+\beqn
+\beta\gamma^{\otimes 2} \otimes \beta\gamma^{\otimes N^2} \otimes bc .
+\eeqn
+So: a total of $N^2 + 1$ $\beta\gamma$ systems and a single $bc$ system.
+
+
 \end{document}
 
