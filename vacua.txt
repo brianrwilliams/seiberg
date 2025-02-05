@@ -1,0 +1,74 @@
+moduli of vacua:
+
+* constant solutions --- same for any spacetime! hence useful beyond R^n
+
+* distinction between different versions of "space": the solutions (e.g., as derived stack) vs what functions/observables can see (i.e., the affinization)
+===> this is especially important at quantum level, as we deform the algebra of functions/observables
+
+* at classical level, there are then three relevant spaces: the derived stack \cM, the affinization \rM, and the (semi)stable open locus \cM^s inside \cM
+
+* for many SUSY gauge theories (especially with non-adjoint fields), the affinization does not see "anti-fields" of the BV formulation as they disappear by Higgs mechanism on the stable locus \cM^s
+
+* kempf-ness theorem is applicable in many situations to affinization of classical vacua: it relates SUSY situation (symplectic reduction where moment map is "D-flat condition") to a problem in algebraic geometry (GIT quotient) [cite Luty-Taylor]
+
+* the accidental/surprising isomorphism of some GIT quotients (but not stacks!) relates affinized moduli of classical vacua of distinct SUSY gauge theories: Seiberg duality is a good example
+
+
+On the GIT equivalence:
+
+For each theory, we have three important spaces
+\begin{itemize}
+\item the derived stack of constant solutions $\cM = V/G$ where $V$ denotes the constant sections of the fields and $G$ denotes the gauge group;
+\item its affinization $M = V \sslash G = |\cM|$;
+\item the substack of ``generic'' points $\cM^\circ$.
+\end{itemize}
+These are related by maps
+\[
+\cM^\circ \hookrightarrow \cM \to M
+\]
+and we require (to fit with the GIT story) that
+\[
+\Spec(\RR\Gamma(\cM^\circ, \cO)) = |\cM^\circ| = M.
+\]
+In other words, the important algebraic data is seen generically, ignoring the stacky points.
+
+In the setting of Seiberg duality, we have a diagram
+\[
+\begin{tikzcd}
+\cM^\circ_e \arrow[d] & \cM^\circ_m \\
+M_e \arrow[r, "\cong"] & M_m
+\end{tikzcd}
+\]
+where the subscripts indicate the electric/magnetic theory.
+It is a theorem of Weyl that the affinizations agree.
+
+It would be convenient if we had a map on the substacks of generic points.
+Can we build one?
+
+**** after some thinking ****
+
+I don't think there's an obvious map. 
+
+If you think about the quarks $\cQ = \Hom(\CC^N, \CC^F)$, then the quotient $\cQ/\GL_N$ is the affine cone of the grassmannian $\Gr_N(\CC^F)$. 
+This quotient admits a natural dual/perpendicular map to $\Gr_{F-N}(\CC^F)$, 
+but there is no canonical way (I can see) to lift it to the level of the Stiefel manifold 
+(i.e., bases for these subspaces, which provide matrices that parametrize the actual vacua).
+On the other hand, if we pick a nice open in a grassmannian,
+then I think there is a natural section of the Stiefel manifold (i.e., basis for each subspace) and we can find a corresponding section of the dual Stiefel manifold.
+
+Note that on the electric side there is a natural map
+\[
+Q \times Q^\dagger/\SL_N \supset \cM^\circ_e \to \End(\CC^F) \times \Gr_N(\CC^F)
+\]
+sending the pair $(q, q^\dagger)$ to $(q^\dagger q, \im(q))$.
+Here $q$ is generic and hence has maximal rank, so the image is $N$-dimensional,
+and likewise $q^\dagger$ is maximal rank, so that the composite $q^\dagger q$ is a rank $N$ endomorphism.
+
+Claim: This map is an injection.
+
+Idea: Given a full rank $q$ and the composite $q^\dagger q$, we can solve for $q^\dagger$ uniquely. 
+The choice of $q$ as a representative of the dimension $N$ subspace in $\CC^F$ is free up to the $\SL_N$ action.
+
+On magnetic side 
+
+
