@@ -7,16 +7,6 @@
 
 %\newcommand{\sslash}{\mathbin{/\mkern-6mu/}}
 
-\renewcommand{\op}{\operatorname}
-\newcommand{\bm}{\mathbf{m}}
-\newcommand{\clie}{C^\bu_{\rm Lie}}
-\newcommand{\cbry}{C^\bu_{\rm Bry}}
-%\DeclareMathOperator{\Sym}{Sym}
-\newcommand{\csym}{\widehat{\Sym}}
-\DeclareMathOperator{\SL}{SL}
-\DeclareMathOperator{\Mat}{Mat}
-\DeclareMathOperator{\Proj}{Proj}
-
 %\addbibresource{refs}
 
 \usepackage{subfiles}
@@ -362,6 +352,172 @@ It seems to me that there are three options for this:
 \end{enumerate}
 Remarkably, the third option may hold, based on Brian's recollection. 
 
+\section{14 February 2025: Answering the questions above}
 
+{\em From an email I sent to BW on 14 January 2025}
+
+{\bf Issue/Confusion}
+
+For hQCD, the antifield to the gauge field consists begins in degree 0. Thus it looks like there is a contribution to the classical vacua: a copy of $\fg^*$ in degree~0, from the constant antifields. 
+
+The physicists see no such contribution to the moduli of classical vacua.
+
+{\bf Resolution}
+
+If you compute the formal neighborhood of the all-zero solution (including the quark and antiquark fields being zero), there is such a factor of~$\fg^*$. That is, the tangent complex to the BV complex has a copy of $\fg^*$ in~$H^0$.
+
+If you compute around a generic vacuum solution $x$ (where, say, the quarks encode a full rank matrix  of size $N \times F$), then there is no stabilizer and hence $H^{-1}$ of the tangent complex has no contribution from the ghosts. That is, the gauge fields contribute nothing to the tangent complex. Hence the contribution of the anti-gauge fields must also be zero.
+
+The key insight is the following. 
+
+Let $\cM$ be a derived space and consider its shifted cotangent bundle $T^*[k]\cM$. Let $x$ be a point on $\cM$ and view it as also a point on $T^*[k]\cM$. When you compute $T_x(T*[k]\cM)$, it agrees with $T^*[k](T_x \cM)$.  That is, you can commute the order in which you compute (co)tangent directions.
+
+In our case, the tangent complex $T_x \cM$ at a generic vacuum $x$ is concentrated in degree~0 with only contributions from the quarks and antiquarks.
+
+{\bf Take-away}
+
+The physicists' answer is generically correct, but it misses some funny contributions from anti-gauge fields at the non-generic vacua. 
+
+Also, I should actually go through computations and not try to skip doing them!
+
+\section{14 February 2025: On the equivalence of classical vacua {\it \`a la} Seiberg}
+
+After trying for a long while on my own (and learning a lot in the process),
+I finally asked Ed Segal what was going on.
+He reminded me of his formulation from this summer and it gave me enough to write the desired isomorphism.
+(There remain some questions about why the magnetic moduli space is correct.)
+
+Let $F$ be a positive integer (number of ``flavors") and let $N$ be a positive integer (number of ``colors") with $F - N > 1$. 
+Set $N' = F-N$.
+
+We want to identify two GIT quotients (``moduli of vacua") arising from SUSY gauge theories with matter:
+\begin{itemize}
+\item an "electric" theory  whose gauge group is $SU(N)$ and
+\item a "magnetic" theory whose gauge group is $SU(N') = SU(F-N)$.
+\end{itemize}
+We denote the ``electric moduli space" by $M_e[N,F]$, 
+and the ``magnetic moduli space" by $M_m[N,F]$,
+
+The electric side has $F$ flavors of quarks and antiquarks. 
+That means, in practice there are $F$ copies of the fundamental representation $\bN = \CC^N$
+(the quarks) 
+and $F$ copies of the antifundamental representation $\bN^* = (\CC^N)^*$ (the antiquarks). 
+Let $\bF = \CC^F$ denote the fundamental representation of $\GL(F)$.
+Then the GIT quotient can be described as
+\[
+\Hom(\bF, \bN) \times \Hom(\bN,\bF)\sslash \SL(N)
+\]
+and results of Luty-Tayler identify this with the moduli of vacua~$M_e[N,F]$.
+
+\begin{prop}
+The GIT quotient 
+\[
+\Hom(\bF, \bN) \times \Hom(\bN,\bF)\sslash \GL(N)
+\]
+is the total space of the vector bundle
+\[
+p: \Hom(\underline{F}, S) \to \Gr(N,F),
+\]
+where $\underline{F}$ is the trivial rank $F$ bundle and $S$ is the tautological bundle on the Grassmannian of $N$-planes in an $F$-dimensional vector space
+(i.e., the subbundle of $\underline{F}$ assigning $V \subset \bF$ to the point $[V] \in \Gr(N,F)$).
+The quotient
+\[
+\Hom(\bF, \bN) \times \Hom(\bN,\bF)\sslash \SL(N)
+\]
+is a $\GG_m$-bundle over that total space $\Tot(p)$.
+\end{prop}
+
+\begin{proof}
+The second claim, comparing the $\SL(N)$ quotient to the $\GL(N)$ quotient, is straightforward.
+Observe that
+\[
+\GL(N)/\SL(N) \cong \GG_m
+\]
+as $\det: \GL(N) \to \GG_m$ is surjective and its fiber over the identity $1 \in \GG_m$ is precisely~$\SL(N)$.
+Hence, given a manifold $X$ with a {\em free} action of $\GL(N)$, 
+the quotient map
+\[
+X/\SL(N) \to X/\GL(N)
+\]
+has the property that the fiber of any point $[x] \in X/\GL(N)$ is a copy of~$\GG_m$.
+(It is a determinant bundle over~$X/\GL(N)$.)
+Now we turn to the first claim.
+
+Consider a point $(X,Y)$ in $\Hom(\bF, \bN) \times \Hom(\bN,\bF)$ under the $\GL(N)$ action.
+By forgetting the $X$ coordinate and remembering only the $Y$ coordinate, 
+we get a forgetful map
+\[
+q: \Hom(\bF, \bN) \times \Hom(\bN,\bF)\sslash\GL(N) \to \Hom(\bN,\bF)\sslash \GL(N).
+\]
+A point $Y$ in $\Hom(\bN,\bF)$ is stable for the $\GL(N)$ action if its stabilizer is trivial,
+and that means $Y$ must have full rank.
+A full rank $Y$ determines a dimension $N$ subspace $\im(Y) \subset \bF$,
+and $Y$ itself provides a basis for this subspace.
+Thus there is a map
+\[
+\Hom(\bN,\bF)_{\rk = N} \to \Gr(N,F) 
+\]
+where the base remembers $\img(Y)$ and the fiber is the collection of all possible bases for this subspace;
+in other words, we have a Stiefel bundle over a Grassmannian
+\[
+\Stf(N,F) \to \Gr(N,F),
+\]
+which is the tautological principal $\GL(N)$-bundle.
+Hence we have shown that
+\begin{align*}
+\Hom(\bN,\bF)\sslash \GL(N) 
+&= \Hom(\bN,\bF)_{\rk = N}/\GL(N)\\
+&\cong \Gr(N,F).
+\end{align*}
+It remains to understand the map $q$ to conclude the first claim of the proposition.
+
+A point $(X,Y)$ in $\Hom(\bF, \bN) \times \Hom(\bN,\bF)$ is stable for the $\GL(N)$ action if its stabilizer is trivial.
+In particular, that requires either $X$ to be surjective or $Y$ to be injective.
+Since we are using $q$ in our analysis, consider the pairs where $Y$ is injective:
+there is a forgetful map
+\[
+\Hom(\bF, \bN) \times \Hom(\bN,\bF)_{\rk = N} \to \Hom(\bN,\bF)_{\rk = N}
+\]
+and it is manifestly $\GL(N)$-equivariant.
+Hence it descends to map of quotients
+\[
+\Hom(\bF, \bN) \times \Hom(\bN,\bF)_{\rk = N}/\GL(N) \to \Hom(\bN,\bF)_{\rk = N}/\GL(N)
+\]
+and that can be seen as
+\[
+\Hom(\bF,\bN) \times_{\GL(N)} \Stf(N,F) \to \Gr(N,F),
+\]
+an associated bundle.
+Now the tautological bundle $S$ is precisely the associated bundle
+\[
+\bN \times_{\GL(N)} \Stf(N,F) \to \Gr(N,F).
+\]
+Hence the first claim is shown.
+\end{proof}
+
+The magnetic side is more complicated and has a superpotential. 
+It has $F$ flavors of quarks and antiquarks and {\it additionally} ``mesons." 
+The quarks correspond to $F$ copies of $\bN' = \CC^{N'}$, 
+the antiquarks correspond to $F$ copies of $\bN'^*= (\CC^{N'})^*$, 
+and the mesons correspond to $\End(\bF)$ 
+and hence provide a trivial representation of the gauge group~$SU(N')$. 
+
+Let $X$ be a quark, so an element of $\Hom(\bF, \bN')$.
+Let $Y$ be an antiquark, so an element of $\Hom(\bN', \bF)$.
+Let $M$ be a meson, so an element of $\End(\bF)$.
+Picture these ``quiver-style" with two nodes: 
+\[
+\begin{tikzcd}
+\bN' \arrow[r, bend right, "Y"'] & \bF \arrow[l, bend right, "X"'] \arrow[loop right, looseness=15, "M"]
+\end{tikzcd}
+\]
+The superpotential is $W=\Tr(MYX)$.
+
+This superpotential means that we want the critical locus of $W$, 
+so we impose the equations 
+\[
+MY = 0, \quad XM = 0, \quad \text{and } YX = 0. 
+\]
+The moduli of vacua~$M_m[N,F]$ is the GIT quotient~$\Crit(W)\sslash \SL(N')$. 
 
 \end{document}
