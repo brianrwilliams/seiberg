@@ -387,6 +387,23 @@ I finally asked Ed Segal what was going on.
 He reminded me of his formulation from this summer and it gave me enough to write the desired isomorphism.
 (There remain some questions about why the magnetic moduli space is correct.)
 
+Let me remark that I'm quite ignorant of GIT quotients.
+Everything below can be understood as 
+\begin{itemize}
+\item identifying substacks of the stacky quotients and
+\item providing an isomorphism between these substacks.
+\end{itemize}
+I would say that we still need to demonstrate that these substacks know the ``physical'' information (e.g., the affinization of the stacky quotients).
+Better understanding of GIT would probably suffice here, so I'll try to fill that in.
+
+On the electric side it is clear that the substack is open and captures ``generic'' points,
+so it is ``dense'' in some sense.
+On the magnetic side, such a claim is less clear to me (although Ed implicitly asserts it).
+
+\owen{Below I'll offer a different phrasing of Ed's claims that avoids GIT language using this comment color.}
+
+\subsection{Ed's version}
+
 Let $F$ be a positive integer (number of ``flavors") and let $N$ be a positive integer (number of ``colors") with $F - N > 1$. 
 Set $N' = F-N$.
 
@@ -426,6 +443,8 @@ The electric moduli space $M_e[N,F]$ is the GIT quotient
 \]
 which is a $\GG_m$-bundle over that total space~$\Tot(e)$.
 \end{prop}
+
+\owen{Instead of saying "the GIT quotient is \dots", we could simply say "there is an open substack \dots" As the condition is a rank condition, it is manifestly generic in this case.}
 
 \begin{proof}
 The second claim, comparing the $\SL(N)$ quotient to the $\GL(N)$ quotient, is straightforward.
@@ -483,11 +502,10 @@ Hence it descends to map of quotients
 \[
 \Hom(\bF, \bN) \times \Hom(\bN,\bF)_{\rk = N}/\GL(N) \to \Hom(\bN,\bF)_{\rk = N}/\GL(N)
 \]
-and that can be seen as
+and that can be seen as the  associated bundle
 \[
-\Hom(\bF,\bN) \times_{\GL(N)} \Stf(N,F) \to \Gr(N,F),
+\Hom(\bF,\bN) \times_{\GL(N)} \Stf(N,F) \to \Gr(N,F).
 \]
-an associated bundle.
 Now the tautological bundle $S$ is precisely the associated bundle
 \[
 \bN \times_{\GL(N)} \Stf(N,F) \to \Gr(N,F).
@@ -522,14 +540,82 @@ The solutions are denoted~$\Crit(W)$.
 
 \begin{prop}
 The magnetic moduli space~$M_m[N,F]$ is the GIT quotient~$\Crit(W)\sslash \SL(N')$. 
-This quotient is the total space of the vector bundle
+The further quotient $\Crit(W)\sslash \GL(N')$ is the total space of the vector bundle
 \[
-m: \Hom(\underline{F}/S, \bN') \to \Gr(N',F).
+m: \Hom(\underline{F}/S, \underline{F}) \to \Gr(N',F)
 \]
+where $S \to \Gr(N',F)$ denotes the tautological bundle and $\underline{F}$ denotes the trivial bundle of rank~$F$.
+Hence $M_m[N,F]$ is a $\GG_m$-bundle over~$\Tot(m)$.
 \end{prop}
 
-\begin{proof}
+\owen{Here we again have a substack. It is less clear to me that it encompasses the "generic" situation, as there are big families of solutions like $\{X = 0 = Y, M \text{ anything}\}$.}
 
+\begin{proof}
+As the final claim is parallel to the final claim about the electric moduli space,
+it suffices to verify the description of $\Crit(W)\sslash \GL(N')$.
+
+We note that a solution is stable if $X \in \Hom(\bF, \bN')$ has full rank (in which case $Y = 0$) or if $Y \in \Hom(\bN', \bF)$ has full rank (in which case $X = 0$).
+Let us consider solutions of the second type: $Y$ is injective and $X = 0$.
+Thus $\img(Y) \subset \bF$ determines a point in $\Gr(N',F)$.
+The equations tell us that $MY = 0$, so that $\ker(M) \supset \img(Y)$, and hence $M: \bF \to \bF$ factors through the quotient space $\bF/\img(Y) = {\rm coker}(Y)$.
+
+Observe that the vector bundle
+\[
+\Hom(\underline{F}/S,\underline{F}) \to \Gr(N',F)
+\]
+has fiber $\Hom(\bF/V,\bF)$ over the point $V \subset \bF$ in the Grassmannian (i.e., $\dim(V) = N'$).
+Thus a solution $(X,Y,M) \in \Crit(W)$ where $X = 0$ and $Y$ has full rank determines a point in this vector bundle, where $V = \img(Y)$ and $M$ determines a linear map $\overline{M}: \bF/\img(Y) \to \bF$.
+Note that this map is $\GL(N')$-equivariant, realizing the claim.
 \end{proof}
+
+\subsection{The isomorphism}
+
+We now describe an isomorphism
+\[
+\Phi: M_e[N,F] \to M_m[N,F]
+\]
+of vector bundles over the isomorphism
+\[
+\phi: \Gr(N,F) \to \Gr(N',F)
+\]
+of spaces.
+Here $\phi$ sends $V \subset \bF$ to its annihilator
+\[
+\Ann(V) = \{ \lambda \in \bF^* \mid \lambda(v) = 0 \forall v \in V\}
+\]
+where $\Ann(V) \subset \bF^* = \Hom(\bF,\CC)$.
+
+Given a pair $(X, Y)$ where the antiquark $Y \in \Hom(\bN,\bF)$ has full rank,
+observe that the dual map
+\[
+Y^*: \bF^* \to \bN^*
+\]
+determines a subspace
+\[
+\ker(Y^*) \subset \bF^*
+\]
+of dimension $N' = F-N$.
+Hence we have described the composition
+\[
+M_e[N,F] \to \Gr(N,F) \to \Gr(N',F)
+\]
+and now we need to describe how a fiber over $V \in \Gr(N,F)$ maps to a fiber over~$\phi(V)$.
+
+A pair $(X,Y)$ also determines a meson via the composite $YX: \bF \to \bF$,
+and this meson is the same for any pair $(gX, Yg^{-1})$ on the $\GL(N)$-orbit.
+That is, the composition map
+\[
+\Hom(\bF, \bN) \times \Hom(\bN,\bF) \to \End(\bF)
+\]
+is $\GL(N)$-equivariant.
+Taking duals then determines the desired map $\Phi$:
+given a $\GL(N)$-orbit $[X,Y] \in M_e[N,F]$,
+$\Phi$ sends it to the $\GL(N')$-orbit of a triple $[x,y,m]$ where $x = 0$, $y \in \Hom(\bN',\bF)$ satisfies $\img(y) = \ker(Y^*)$, and the meson is
+\[
+m = (YX)^* = X^* Y^*.
+\]
+Observe that $my = 0$ by construction.
+
+\owen{It's not hard to show the map is injective and surjective, but let me leave that for the future.}
 
 \end{document}
